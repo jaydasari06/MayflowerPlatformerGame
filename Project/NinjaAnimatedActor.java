@@ -1,7 +1,5 @@
 package Project;
 
-import mayflower.*;
-
 public class NinjaAnimatedActor extends AnimatedActor
 {
     private Animation walk; 

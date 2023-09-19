@@ -1,7 +1,5 @@
 package Project;
 
-import mayflower.*;
-
 public class Cat extends MovableAnimatedActor
 {
     private Animation walk; 

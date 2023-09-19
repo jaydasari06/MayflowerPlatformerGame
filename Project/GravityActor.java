@@ -19,10 +19,6 @@ public class GravityActor extends Actor
         return !ret;
         }
     public void act(){
-        int x = getX();
-        int y = getY();
-        int w = getWidth();
-        int h = getHeight();
         setLocation(getX(), getY() + 1);
         if(isBlocked()){
             setLocation(getX(), getY() - 1);
