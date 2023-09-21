@@ -1,7 +1,12 @@
 package Project;
 
+import mayflower.*;
+
 public class Cat extends MovableAnimatedActor
 {
+
+    private int score;
+    private int lives; 
     private Animation walk; 
     private Animation walkLeft;
     private Animation idleLeft;
@@ -10,6 +15,8 @@ public class Cat extends MovableAnimatedActor
     private Animation fallingLeft;
     public Cat() 
     {
+        score = 0; 
+        lives = 3; 
         String[] strings = new String[10];
         String[] strings2 = new String[10];
         String[] walkleft = new String[10];
@@ -70,5 +77,46 @@ public class Cat extends MovableAnimatedActor
     public void act()
     {
         super.act();
+        setPosition();
     }
+
+    public void increaseScore( int amount )
+    {
+        score += amount; 
+        updateText();
+    }
+
+    public int getScore()
+    {
+        return score; 
+    }
+
+    public int getLives()
+    {
+        return lives; 
+    }
+
+    private void updateText()
+    {
+        World w = getWorld();
+        w.removeText(10, 30);
+        w.showText("Score: " + score + " Lives: " + lives, 10, 30, Color.BLACK);
+    }
+
+    public void setPosition()
+    {
+        if(isTouching(DogAnimatedActor.class))
+        {
+            lives--; 
+            updateText();
+            setLocation(400, 300);
+            if(lives == 0)
+            {
+                World w = getWorld();
+                w.removeObject(this);
+            }
+        }
+    }
+
+
 }

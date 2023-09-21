@@ -11,8 +11,9 @@ public class DogAnimatedActor extends AnimatedActor
         }
         walk = new Animation(50, strings);
         setAnimation(walk);
-        walk.scale(100, 100);
-        walk.setTransparency(30);
+        walk.scale(100, 87);
+        walk.setBounds(18, 5, 54, 80);
+        
     }
     public void act()
     {
