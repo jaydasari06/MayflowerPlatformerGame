@@ -15,7 +15,8 @@ public class MyMayflower extends Mayflower
     {
         //Change this to true to run this program in fullscreen mode
         Mayflower.setFullScreen(false);
-        World w =  new TitleScreen();
-        Mayflower.setWorld(w);
+        World t =  new TitleScreen();
+
+        Mayflower.setWorld(t);
     }
 }
