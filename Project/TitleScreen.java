@@ -17,8 +17,8 @@ public class TitleScreen extends World {
     public void act()
     {
         World w = new MyWorld();
-            if (Mayflower.isKeyDown(Keyboard.KEY_SPACE)){
-                Mayflower.setWorld(w);
-            }
+        if (Mayflower.isKeyPressed(Keyboard.KEY_SPACE)){
+            Mayflower.setWorld(w);
+        }
     }
 }
