@@ -12,14 +12,14 @@ public class MyWorld extends World {
     
     public MyWorld() 
     {
-        setBackground("img/BG/BG.png");
+        setBackground("img/City.jpg");
         Mayflower.showBounds(true);
         cat = new Cat();
         dog = new DogAnimatedActor();
         addObject(cat, 400, 100);
         block = new Block();
         block2 = new Block();
-        addObject(block, 400, 500);
+        addObject(block, 400, 472);
         addObject(block2, 528, 372);
         addObject(dog, 528, 272);
 
