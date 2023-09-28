@@ -100,7 +100,7 @@ public class Cat extends MovableAnimatedActor
     {
         World w = getWorld();
         w.removeText(10, 30);
-        w.showText("Score: " + score + " Lives: " + lives, 10, 30, Color.BLACK);
+        w.showText("Score: " + score + " Lives: " + lives, 10, 30, Color.WHITE);
     }
 
     public void setPosition()
