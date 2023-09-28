@@ -24,7 +24,7 @@ public class MyWorld extends World {
         addObject(dog, 528, 272);
 
 
-        showText("Score: " + cat.getScore() +  " Lives: " + cat.getLives(), 10, 30, Color.BLACK);
+        showText("Score: " + cat.getScore() +  " Lives: " + cat.getLives(), 10, 30, Color.WHITE);
     }
     
     public void act()
