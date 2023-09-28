@@ -7,19 +7,15 @@ public class TitleScreen extends World {
     
     public TitleScreen() 
     {
-        
+        setBackground("img/BG/BG.png");
         Mayflower.showBounds(true);
-        
     }
     
     public void act()
     {
         World w = new MyWorld();
-        while(true){
-            if (Mayflower.isKeyPressed(Keyboard.KEY_SPACE)){
-                Mayflower.setWorld(w);
-                break;
-            }
+        if(Mayflower.isKeyPressed(Keyboard.KEY_SPACE)){
+           Mayflower.setWorld(w);
         }
     }
     
