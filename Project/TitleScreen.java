@@ -9,15 +9,15 @@ public class TitleScreen extends World {
     {
         setBackground("img/City.jpg");
         Mayflower.showBounds(true);
-        showText("Welcome!", 200, 200, Color.WHITE);
-        showText("Press Space to Play: ", 200, 330, Color.WHITE);
+        showText("Welcome!", 350, 200, Color.WHITE);
+        showText("Press Enter to Play: ", 300, 300, Color.WHITE);
         
     }
     
     public void act()
     {
         World w = new MyWorld();
-            if (Mayflower.isKeyDown(Keyboard.KEY_SPACE)){
+            if (Mayflower.isKeyDown(Keyboard.KEY_ENTER)){
                 Mayflower.setWorld(w);
             }
     }

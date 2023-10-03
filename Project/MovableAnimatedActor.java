@@ -11,6 +11,9 @@ public class MovableAnimatedActor extends AnimatedActor {
     private Animation idleLeft;
     private Animation fallingRight;
     private Animation fallingLeft;
+    private Animation jumpingRight; 
+    private Animation jumpingLeft; 
+    private boolean jumpReady; 
 
     public MovableAnimatedActor() {
         direction = "right";
@@ -40,6 +43,16 @@ public class MovableAnimatedActor extends AnimatedActor {
         fallingLeft = ani;
     }
 
+    public void setJumpingRightAnimation(Animation ani) {
+        jumpingRight = ani;
+    }
+
+    public void setJumpingLeftAnimation(Animation ani) {
+        jumpingLeft = ani;
+    }
+
+
+
     public void act() {
         super.act();
         int x = getX();
@@ -56,11 +69,40 @@ public class MovableAnimatedActor extends AnimatedActor {
             newAction = "idle";
         }
     
-        if (this.isBlocked()) {
-            setLocation(x + 1, y);
+        if(!this.isBlocked() && !isFalling)
+        {
+            jumpReady = true; 
         }
-    
-        if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT)) {
+        else if (this.isBlocked() || isFalling) {
+            jumpReady = false; 
+        }
+        if (Mayflower.isKeyPressed(Keyboard.KEY_RIGHT) && y < 456 && jumpReady)
+        {
+            direction = "right";
+            if (!isFalling) {
+                newAction = "jumpingRight";
+            } else {
+                newAction = "fallingRight";
+            }
+            this.charJump();
+            if(this.isTouching(Block.class)){
+                setLocation(x + 20, y - 20); 
+            }
+            jumpReady = false; 
+        } else if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT) && y < 456 && jumpReady){
+            direction = "left";
+            if (!isFalling) {
+                newAction = "jumpingLeft";
+            } else {
+                newAction = "fallingLeft";
+            }
+            this.charJump();
+            if(this.isTouching(Block.class)){
+                setLocation(x - 20, y - 20); 
+            }
+            jumpReady = false; 
+        }
+        else if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT)) {
             direction = "right";
             if (x < xmax) {
                 setLocation(x + 1, y);
@@ -88,23 +130,29 @@ public class MovableAnimatedActor extends AnimatedActor {
             if (this.isTouching(Block.class)) {
                 setLocation(x + 1, y);
             }
+        } else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && jumpReady){
+            if(direction == "left"){
+                newAction = "jumpingLeft";
+            }
+            else{
+                newAction = "jumpingRight";
+            }
+            this.charJump();
+            if(this.isTouching(Block.class)){
+                setLocation(x, y - 20); 
+            }
+            jumpReady = false; 
+
         } else if (isFalling && direction.equals("left")) {
             newAction = "fallingLeft";
-        } else if (Mayflower.isKeyDown(Keyboard.KEY_UP)) {
-            if (y > 0) {
-                setLocation(x, y - 1);
-            }
-            if (this.isTouching(Block.class)) {
-                setLocation(x, y + 1);
-            }
-        } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)) {
+        } /*else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)) {
             if (y < ymax) {
                 setLocation(x, y + 1);
             }
             if (this.isTouching(Block.class)) {
                 setLocation(x, y - 1);
             }
-        } else {
+        } */else {
             newAction = "idle";
             if (direction != null && direction.equals("left")) {
                 newAction = "idleLeft";
@@ -136,7 +184,12 @@ public class MovableAnimatedActor extends AnimatedActor {
             if(newAction.equals("walkLeft")){
                     setAnimation(walkLeft);
                 }
-                
+            if(newAction.equals("jumpingRight")){
+                    setAnimation(jumpingRight);
+            }
+            if(newAction.equals("jumpingLeft")){
+                    setAnimation(jumpingLeft);
+            }
             currentAction = newAction;  
         }
     }
