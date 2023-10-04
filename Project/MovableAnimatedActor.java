@@ -76,7 +76,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         else if (this.isBlocked() || isFalling) {
             jumpReady = false; 
         }
-        if (Mayflower.isKeyPressed(Keyboard.KEY_RIGHT) && y < 456 && jumpReady)
+        if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && y < 456 && jumpReady)
         {
             direction = "right";
             if (!isFalling) {
@@ -89,7 +89,7 @@ public class MovableAnimatedActor extends AnimatedActor {
                 setLocation(x + 20, y - 20); 
             }
             jumpReady = false; 
-        } else if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT) && y < 456 && jumpReady){
+        } else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && y < 456 && jumpReady){
             direction = "left";
             if (!isFalling) {
                 newAction = "jumpingLeft";
