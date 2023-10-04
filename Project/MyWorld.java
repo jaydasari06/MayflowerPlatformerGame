@@ -34,15 +34,7 @@ public class MyWorld extends World {
         tiles = new String[12][16];
         buildWorld();
         cat = new Cat();
-        dog = new DogAnimatedActor();
-        addObject(cat, 400, 100);
-        block = new Block();
-        block2 = new Block();
-        addObject(block, 400, 472);
-        addObject(block2, 528, 372);
-        addObject(dog, 528, 272);
-
-
+        addObject(cat, 200, 0);
         showText("Score: " + cat.getScore() +  " Lives: " + cat.getLives(), 10, 30, Color.BLACK);
     }
 
