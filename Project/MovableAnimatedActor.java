@@ -15,6 +15,10 @@ public class MovableAnimatedActor extends AnimatedActor {
     private Animation jumpingLeft; 
     private Animation attackRight; 
     private Animation attackLeft; 
+    private Animation attackRight2; 
+    private Animation attackLeft2;
+    private Animation attackRight3; 
+    private Animation attackLeft3;
     private boolean jumpReady; 
 
     public MovableAnimatedActor() {
@@ -60,6 +64,20 @@ public class MovableAnimatedActor extends AnimatedActor {
     public void setAttackRightAnimation(Animation ani) {
         attackRight = ani;
     }
+    public void setAttackLeft2Animation(Animation ani) {
+        attackLeft2 = ani;
+    }
+
+    public void setAttackRight2Animation(Animation ani) {
+        attackRight2 = ani;
+    }
+    public void setAttackLeft3Animation(Animation ani) {
+        attackLeft3 = ani;
+    }
+
+    public void setAttackRight3Animation(Animation ani) {
+        attackRight3 = ani;
+    }
 
 
 
@@ -89,7 +107,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT)) {
             direction = "right";
             if (x < xmax) {
-                setLocation(x + 1, y);
+                setLocation(x + 2, y);
             }
             if (!isFalling) {
                 newAction = "walkRight";
@@ -98,12 +116,12 @@ public class MovableAnimatedActor extends AnimatedActor {
             }
     
             if (this.isTouching(Floor.class)) {
-                setLocation(x - 1, y);
+                setLocation(x - 2, y);
             }
         } else if (Mayflower.isKeyDown(Keyboard.KEY_LEFT)) {
             direction = "left";
             if (x > 0) {
-                setLocation(x - 1, y);
+                setLocation(x - 2, y);
             }
             if (!isFalling) {
                 newAction = "walkLeft";
@@ -111,7 +129,7 @@ public class MovableAnimatedActor extends AnimatedActor {
                 newAction = "fallingLeft";
             }
             if (this.isTouching(Floor.class)) {
-                setLocation(x + 1, y);
+                setLocation(x + 2, y);
             }
         } else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && jumpReady){
             if(direction == "left"){
@@ -132,7 +150,21 @@ public class MovableAnimatedActor extends AnimatedActor {
             else{
                 newAction = "attackRight";
             }
-        } else if (isFalling && direction.equals("left")) {
+        } /*else if(Mayflower.isKeyDown(Keyboard.KEY_X)){
+            if(direction == "left"){
+                newAction = "attackLeft2";
+            }
+            else{
+                newAction = "attackRight2";
+            }
+        } else if(Mayflower.isKeyDown(Keyboard.KEY_Q)){
+            if(direction == "left"){
+                newAction = "attackLeft3";
+            }
+            else{
+                newAction = "attackRight3";
+            }
+        }*/ else if (isFalling && direction.equals("left")) {
             newAction = "fallingLeft";
         } /*else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)) {
             if (y < ymax) {
@@ -184,6 +216,18 @@ public class MovableAnimatedActor extends AnimatedActor {
             }
             if(newAction.equals("attackLeft")){
                     setAnimation(attackLeft);
+            }
+            if(newAction.equals("attackRight2")){
+                    setAnimation(attackRight2);
+            }
+            if(newAction.equals("attackLeft2")){
+                    setAnimation(attackLeft2);
+            }
+            if(newAction.equals("attackRight3")){
+                    setAnimation(attackRight3);
+            }
+            if(newAction.equals("attackLeft3")){
+                    setAnimation(attackLeft3);
             }
             currentAction = newAction;  
         }

@@ -7,6 +7,7 @@ public class MyWorld extends World {
     private King king;
     private String[][] tiles;
     private Platform obelisk; 
+    private Enemy enemy; 
     
     public void buildWorld(){
         for(int i = 0; i < tiles.length; i++){
@@ -33,10 +34,12 @@ public class MyWorld extends World {
         tiles = new String[12][16];
         buildWorld();
         king = new King();
+        enemy = new Enemy();
         obelisk = new Platform();
         obelisk.scale(50,50);
         addObject(king, 200, 0);
-        addObject(obelisk, 300, 100);
+        addObject(enemy, 128, 408);
+        addObject(obelisk, 700, 0);
         showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.BLACK);
     }
 
