@@ -103,8 +103,6 @@ public class Cat extends MovableAnimatedActor
         jumpingLeft.mirrorHorizontally();
         jumpingLeft.scale(200, 172);
         jumpingLeft.setBounds(xBox,yBox, width, height + 5);
-        jumpingLeft.scale(200, 172);
-        jumpingLeft.setBounds(28, 5, 54, 80);
         
         for(int i = 0; i < 4; i ++){
             attackright[i] = "img/Medival King/Attack1/0" + i + "_Attack1.png";
@@ -112,7 +110,7 @@ public class Cat extends MovableAnimatedActor
         attackRight = new Animation(1, attackright);
         setAttackRightAnimation(attackRight);
         attackRight.scale(200, 172);
-        attackRight.setBounds(36, 10, 108, 160);
+        attackRight.setBounds(xBox, yBox, width + 50, height);
         
         for(int i = 0; i < 4; i ++){
             attackleft[i] = "img/Medival King/Attack1/0" + i + "_Attack1.png";
@@ -121,7 +119,7 @@ public class Cat extends MovableAnimatedActor
         setAttackLeftAnimation(attackLeft);
         attackLeft.mirrorHorizontally();
         attackLeft.scale(200, 172);
-        attackLeft.setBounds(28, 5, 54, 80);
+        attackLeft.setBounds(xBox, yBox, width + 50, height);
         
         
     }
