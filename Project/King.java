@@ -30,24 +30,25 @@ public class King extends MovableAnimatedActor
         String[] fallingleft = new String[2];
         String[] jumpingright = new String[2];
         String[] jumpingleft = new String[2];
+        String[] attackright = new String[4];
+        String[] attackleft = new String[4];
         int yBox = 82;
         int height = 80;
         int xBox = 70;
-        int width = 60;
-        String[] attackright = new String[4];
-        String[] attackleft = new String[4];
+        int width = 55;
+        int frame = 1000; 
         for(int i = 0; i < 8; i ++){
             strings[i] = "img/Medival King/Run/0" + i + "_Run.png";
         }
         for(int i = 0; i < 8; i ++){
             walkleft[i] = "img/Medival King/Run/0" + i + "_Run.png";
         }
-        walk = new Animation(10, strings);
+        walk = new Animation(frame, strings);
         setWalkRightAnimation(walk);
         walk.scale(200, 172);
         walk.setBounds(xBox, yBox, width, height);
         
-        walkLeft = new Animation(10, walkleft);
+        walkLeft = new Animation(frame, walkleft);
         setWalkLeftAnimation(walkLeft);
         walkLeft.scale(200, 172);
         walkLeft.scale(200, 172);
@@ -60,11 +61,11 @@ public class King extends MovableAnimatedActor
         for(int i = 0; i < 8; i ++){
             idleleft[i] = "img/Medival King/Idle/0" + i + "_Idle.png";
         }
-        idle = new Animation(10, strings2);
+        idle = new Animation(frame, strings2);
         setIdleAnimation(idle);
         idle.scale(200, 172);
         idle.setBounds(xBox, yBox, width, height);
-        idleLeft = new Animation(10, idleleft);
+        idleLeft = new Animation(frame, idleleft);
         setIdleLeftAnimation(idleLeft);
         idleLeft.mirrorHorizontally();
         idleLeft.scale(200, 172);
@@ -73,7 +74,7 @@ public class King extends MovableAnimatedActor
         for(int i = 0; i < 2; i ++){
             fallingright[i] = "img/Medival King/Fall/0" + i + "_Fall.png";
         }
-        fallingRight = new Animation(10, fallingright);
+        fallingRight = new Animation(frame, fallingright);
         setFallingRightAnimation(fallingRight);
         fallingRight.scale(200, 172);
         fallingRight.setBounds(xBox, yBox, width, height);
@@ -81,7 +82,7 @@ public class King extends MovableAnimatedActor
         for(int i = 0; i < 2; i ++){
             fallingleft[i] = "img/Medival King/Fall/0" + i + "_Fall.png";
         }
-        fallingLeft = new Animation(10, fallingleft);
+        fallingLeft = new Animation(frame, fallingleft);
         setFallingLeftAnimation(fallingLeft);
         fallingLeft.mirrorHorizontally();
         fallingLeft.scale(200, 172);
@@ -90,7 +91,7 @@ public class King extends MovableAnimatedActor
         for(int i = 0; i < 2; i ++){
             jumpingright[i] = "img/Medival King/Jump/0" + i + "_Jump.png";
         }
-        jumpingRight = new Animation(10, jumpingright);
+        jumpingRight = new Animation(frame, jumpingright);
         setJumpingRightAnimation(jumpingRight);
         jumpingRight.scale(200, 172);
         jumpingRight.setBounds(xBox, yBox, width, height + 5);
@@ -98,7 +99,7 @@ public class King extends MovableAnimatedActor
         for(int i = 0; i < 2; i ++){
             jumpingleft[i] = "img/Medival King/Jump/0" + i + "_Jump.png";
         }
-        jumpingLeft = new Animation(10, jumpingleft);
+        jumpingLeft = new Animation(frame, jumpingleft);
         setJumpingLeftAnimation(jumpingLeft);
         jumpingLeft.mirrorHorizontally();
         jumpingLeft.scale(200, 172);
@@ -107,19 +108,19 @@ public class King extends MovableAnimatedActor
         for(int i = 0; i < 4; i ++){
             attackright[i] = "img/Medival King/Attack1/0" + i + "_Attack1.png";
         }
-        attackRight = new Animation(1, attackright);
+        attackRight = new Animation(frame, attackright);
         setAttackRightAnimation(attackRight);
         attackRight.scale(200, 172);
-        attackRight.setBounds(xBox, yBox, width + 50, height);
+        attackRight.setBounds(xBox, yBox, width + 65, height);
         
         for(int i = 0; i < 4; i ++){
             attackleft[i] = "img/Medival King/Attack1/0" + i + "_Attack1.png";
         }
-        attackLeft = new Animation(1, attackleft);
+        attackLeft = new Animation(frame, attackleft);
         setAttackLeftAnimation(attackLeft);
         attackLeft.mirrorHorizontally();
         attackLeft.scale(200, 172);
-        attackLeft.setBounds(xBox, yBox, width + 50, height);
+        attackLeft.setBounds(xBox - 65, yBox, width + 65, height);
     }
 
     public void act()
