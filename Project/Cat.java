@@ -15,6 +15,8 @@ public class Cat extends MovableAnimatedActor
     private Animation fallingLeft;
     private Animation jumpingRight; 
     private Animation jumpingLeft; 
+    private Animation attackRight; 
+    private Animation attackLeft; 
 
     public Cat() 
     {
@@ -32,6 +34,8 @@ public class Cat extends MovableAnimatedActor
         int height = 80;
         int xBox = 70;
         int width = 60;
+        String[] attackright = new String[4];
+        String[] attackleft = new String[4];
         for(int i = 0; i < 8; i ++){
             strings[i] = "img/Medival King/Run/0" + i + "_Run.png";
         }
@@ -45,6 +49,7 @@ public class Cat extends MovableAnimatedActor
         
         walkLeft = new Animation(10, walkleft);
         setWalkLeftAnimation(walkLeft);
+        walkLeft.scale(200, 172);
         walkLeft.scale(200, 172);
         walkLeft.mirrorHorizontally();
         walkLeft.setBounds(xBox, yBox, width, height);
@@ -98,6 +103,27 @@ public class Cat extends MovableAnimatedActor
         jumpingLeft.mirrorHorizontally();
         jumpingLeft.scale(200, 172);
         jumpingLeft.setBounds(xBox,yBox, width, height + 5);
+        jumpingLeft.scale(200, 172);
+        jumpingLeft.setBounds(28, 5, 54, 80);
+        
+        for(int i = 0; i < 4; i ++){
+            attackright[i] = "img/Medival King/Attack1/0" + i + "_Attack1.png";
+        }
+        attackRight = new Animation(1, attackright);
+        setAttackRightAnimation(attackRight);
+        attackRight.scale(200, 172);
+        attackRight.setBounds(36, 10, 108, 160);
+        
+        for(int i = 0; i < 4; i ++){
+            attackleft[i] = "img/Medival King/Attack1/0" + i + "_Attack1.png";
+        }
+        attackLeft = new Animation(1, attackleft);
+        setAttackLeftAnimation(attackLeft);
+        attackLeft.mirrorHorizontally();
+        attackLeft.scale(200, 172);
+        attackLeft.setBounds(28, 5, 54, 80);
+        
+        
     }
 
     public void act()
