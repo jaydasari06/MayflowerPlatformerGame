@@ -76,33 +76,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         else if (this.isBlocked() || isFalling) {
             jumpReady = false; 
         }
-        if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && y < 456 && jumpReady)
-        {
-            direction = "right";
-            if (!isFalling) {
-                newAction = "jumpingRight";
-            } else {
-                newAction = "fallingRight";
-            }
-            this.charJump();
-            if(this.isTouching(Block.class)){
-                setLocation(x + 20, y - 20); 
-            }
-            jumpReady = false; 
-        } else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && y < 456 && jumpReady){
-            direction = "left";
-            if (!isFalling) {
-                newAction = "jumpingLeft";
-            } else {
-                newAction = "fallingLeft";
-            }
-            this.charJump();
-            if(this.isTouching(Block.class)){
-                setLocation(x - 20, y - 20); 
-            }
-            jumpReady = false; 
-        }
-        else if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT)) {
+        if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT)) {
             direction = "right";
             if (x < xmax) {
                 setLocation(x + 1, y);
@@ -113,7 +87,7 @@ public class MovableAnimatedActor extends AnimatedActor {
                 newAction = "fallingRight";
             }
     
-            if (this.isTouching(Block.class)) {
+            if (this.isTouching(Floor.class)) {
                 setLocation(x - 1, y);
             }
         } else if (Mayflower.isKeyDown(Keyboard.KEY_LEFT)) {
@@ -126,8 +100,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             } else {
                 newAction = "fallingLeft";
             }
-    
-            if (this.isTouching(Block.class)) {
+            if (this.isTouching(Floor.class)) {
                 setLocation(x + 1, y);
             }
         } else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && jumpReady){
@@ -138,7 +111,7 @@ public class MovableAnimatedActor extends AnimatedActor {
                 newAction = "jumpingRight";
             }
             this.charJump();
-            if(this.isTouching(Block.class)){
+            if(this.isTouching(Floor.class)){
                 setLocation(x, y - 20); 
             }
             jumpReady = false; 

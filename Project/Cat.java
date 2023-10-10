@@ -28,76 +28,78 @@ public class Cat extends MovableAnimatedActor
         String[] fallingleft = new String[2];
         String[] jumpingright = new String[2];
         String[] jumpingleft = new String[2];
+        int yBox = 82;
+        int height = 80;
+        int xBox = 70;
+        int width = 60;
         for(int i = 0; i < 8; i ++){
             strings[i] = "img/Medival King/Run/0" + i + "_Run.png";
         }
         for(int i = 0; i < 8; i ++){
             walkleft[i] = "img/Medival King/Run/0" + i + "_Run.png";
         }
-        walk = new Animation(50, strings);
+        walk = new Animation(10, strings);
         setWalkRightAnimation(walk);
-        walk.scale(100, 86);
-        walk.setBounds(18, 5, 54, 76);
+        walk.scale(200, 172);
+        walk.setBounds(xBox, yBox, width, height);
         
-        walkLeft = new Animation(50, walkleft);
+        walkLeft = new Animation(10, walkleft);
         setWalkLeftAnimation(walkLeft);
-        walkLeft.scale(100, 86);
+        walkLeft.scale(200, 172);
         walkLeft.mirrorHorizontally();
-        walkLeft.setBounds(28, 5, 54, 76);
+        walkLeft.setBounds(xBox, yBox, width, height);
+
         for(int i = 0; i < 8; i ++){
             strings2[i] = "img/Medival King/Idle/0" + i + "_Idle.png";
         }
         for(int i = 0; i < 8; i ++){
             idleleft[i] = "img/Medival King/Idle/0" + i + "_Idle.png";
         }
-        idle = new Animation(50, strings2);
+        idle = new Animation(10, strings2);
         setIdleAnimation(idle);
-        idle.scale(100, 86);
-        idle.setBounds(18, 5, 54, 76);
-        idleLeft = new Animation(50, idleleft);
+        idle.scale(200, 172);
+        idle.setBounds(xBox, yBox, width, height);
+        idleLeft = new Animation(10, idleleft);
         setIdleLeftAnimation(idleLeft);
         idleLeft.mirrorHorizontally();
-        idleLeft.scale(100, 86);
-        idleLeft.setBounds(28, 5, 54, 76);
-        
+        idleLeft.scale(200, 172);
+        idleLeft.setBounds(xBox, yBox, width, height);
+
         for(int i = 0; i < 2; i ++){
             fallingright[i] = "img/Medival King/Fall/0" + i + "_Fall.png";
         }
-        fallingRight = new Animation(50, fallingright);
+        fallingRight = new Animation(10, fallingright);
         setFallingRightAnimation(fallingRight);
-        fallingRight.scale(100, 86);
-        fallingRight.setBounds(18, 5, 54, 76);
+        fallingRight.scale(200, 172);
+        fallingRight.setBounds(xBox, yBox, width, height);
         
         for(int i = 0; i < 2; i ++){
             fallingleft[i] = "img/Medival King/Fall/0" + i + "_Fall.png";
         }
-        fallingLeft = new Animation(50, fallingleft);
+        fallingLeft = new Animation(10, fallingleft);
         setFallingLeftAnimation(fallingLeft);
         fallingLeft.mirrorHorizontally();
-        fallingLeft.scale(100, 86);
-        fallingLeft.setBounds(28, 5, 54, 76);
+        fallingLeft.scale(200, 172);
+        fallingLeft.setBounds(xBox, yBox, width, height);
 
-        
-         for(int i = 0; i < 2; i ++){
+        for(int i = 0; i < 2; i ++){
             jumpingright[i] = "img/Medival King/Jump/0" + i + "_Jump.png";
         }
-        jumpingRight = new Animation(50, jumpingright);
-        setJumpingRightAnimation(fallingRight);
-        jumpingRight.scale(100, 86);
-        jumpingRight.setBounds(18, 5, 54, 80);
+        jumpingRight = new Animation(10, jumpingright);
+        setJumpingRightAnimation(jumpingRight);
+        jumpingRight.scale(200, 172);
+        jumpingRight.setBounds(xBox, yBox, width, height + 5);
         
         for(int i = 0; i < 2; i ++){
             jumpingleft[i] = "img/Medival King/Jump/0" + i + "_Jump.png";
         }
-        jumpingLeft = new Animation(50, jumpingleft);
+        jumpingLeft = new Animation(10, jumpingleft);
         setJumpingLeftAnimation(jumpingLeft);
         jumpingLeft.mirrorHorizontally();
-        jumpingLeft.scale(100, 86);
-        jumpingLeft.setBounds(28, 5, 54, 80);
-        
-        
-        
+        jumpingLeft.scale(200, 172);
+        jumpingLeft.setBounds(xBox,yBox, width, height + 5);
     }
+
     public void act()
     {
         super.act();

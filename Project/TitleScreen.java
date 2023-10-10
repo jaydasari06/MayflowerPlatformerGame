@@ -7,10 +7,10 @@ public class TitleScreen extends World {
     
     public TitleScreen() 
     {
-        setBackground("img/City.jpg");
+        setBackground("img/TitleScreen.jpg");
         Mayflower.showBounds(true);
-        showText("Welcome!", 350, 200, Color.WHITE);
-        showText("Press Enter to Play: ", 300, 300, Color.WHITE);
+        showText("Welcome!", 330, 50, Color.WHITE);
+        showText("Press Enter to Play: ", 260, 100, Color.WHITE);
         
     }
     
