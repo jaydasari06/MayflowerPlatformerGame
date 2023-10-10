@@ -2,7 +2,7 @@ package Project;
 
 import mayflower.*;
 
-public class Cat extends MovableAnimatedActor
+public class King extends MovableAnimatedActor
 {
 
     private int score;
@@ -18,7 +18,7 @@ public class Cat extends MovableAnimatedActor
     private Animation attackRight; 
     private Animation attackLeft; 
 
-    public Cat() 
+    public King() 
     {
         score = 0; 
         lives = 3; 
@@ -120,8 +120,6 @@ public class Cat extends MovableAnimatedActor
         attackLeft.mirrorHorizontally();
         attackLeft.scale(200, 172);
         attackLeft.setBounds(xBox, yBox, width + 50, height);
-        
-        
     }
 
     public void act()

@@ -6,7 +6,7 @@ import mayflower.*;
 
 public class MyWorld extends World {
 
-    private Cat king;
+    private King king;
     private String[][] tiles;
     private Platform obelisk; 
     
@@ -30,11 +30,11 @@ public class MyWorld extends World {
 
     public MyWorld() 
     {
-        setBackground("img/City.jpg");
+        setBackground("img/TestBackground.png");
         Mayflower.showBounds(true);
         tiles = new String[12][16];
         buildWorld();
-        king = new Cat();
+        king = new King();
         obelisk = new Platform();
         obelisk.scale(50,50);
         addObject(king, 200, 0);
