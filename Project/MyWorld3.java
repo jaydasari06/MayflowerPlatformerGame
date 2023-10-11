@@ -41,12 +41,12 @@ public class MyWorld3 extends World {
         // tiles[17][25] = "platform";
         // tiles[17][26] = "platform";
 
-        tiles[17][8] = "platform";
-        tiles[18][9] = "platform";
-        tiles[19][10] = "platform";
-        tiles[20][11] = "platform";
-        tiles[21][12] = "platform";
-        tiles[22][13] = "platform";
+        tiles[17][13] = "platform";
+        tiles[18][12] = "platform";
+        tiles[19][11] = "platform";
+        tiles[20][10] = "platform";
+        tiles[21][9] = "platform";
+        tiles[22][8] = "platform";
 
         
         tiles[10][17] = "platform";
@@ -144,6 +144,10 @@ public class MyWorld3 extends World {
 
     public void act()
     {
+        if(Mayflower.isKeyDown(Keyboard.KEY_ENTER) && king.isTouchingObelisk()) {
+            World m = new WinScreen();
+            Mayflower.setWorld(m);
+        }
     }
 
     public MovableAnimatedActor getKing(){

@@ -192,6 +192,12 @@ public class King extends MovableAnimatedActor
         pickUpShield();
     }
 
+    public boolean isTouchingObelisk(){
+        if(this.isTouching(AnimatedObelisk.class)){
+            return true;
+        }
+        return false;
+    }
     public void increaseScore( int amount )
     {
         score += amount; 

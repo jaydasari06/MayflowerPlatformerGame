@@ -153,6 +153,10 @@ public class MyWorld2 extends World {
 
     public void act()
     {
+        if(Mayflower.isKeyDown(Keyboard.KEY_ENTER) && king.isTouchingObelisk()) {
+            World m = new MyWorld3();
+            Mayflower.setWorld(m);
+        }
     }
 
     public MovableAnimatedActor getKing(){
