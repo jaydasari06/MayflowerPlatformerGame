@@ -29,9 +29,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         level = 1;
     }
 
-    public void nextLevel(int s){
-        level++;
-    }
+    
 
     public void setWalkRightAnimation(Animation ani) {
         walkRight = ani;
@@ -167,20 +165,6 @@ public class MovableAnimatedActor extends AnimatedActor {
             jumpReady = false;
             if (this.isTouching(Tiles.class)) {
                 setLocation(x, y-30);
-            }
-        } else if(Mayflower.isKeyDown(Keyboard.KEY_ENTER) && this.isTouching(AnimatedObelisk.class)) {
-            World j = new MyWorld3();
-            World m = new MyWorld2();
-            World ij = new WinScreen();
-
-            if(level == 1){
-                Mayflower.setWorld(m);
-                level ++;
-            } else if(level == 2){
-                Mayflower.setWorld(j);
-                level ++;
-            } else {
-                Mayflower.setWorld(ij);
             }
         } else if(Mayflower.isKeyDown(Keyboard.KEY_Z)){
             if(direction == "left"){
