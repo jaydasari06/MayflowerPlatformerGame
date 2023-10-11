@@ -236,6 +236,10 @@ public class MovableAnimatedActor extends AnimatedActor {
         }
     }
 
+    public String getAnimation() {
+        return currentAction;
+    }
+
     public void setAnimation(Animation a) {
         super.setAnimation(a);
     }

@@ -24,7 +24,7 @@ public class GravityActor extends Actor
                 setLocation(getX(),getY() + 10);
                 strength = 0;
             }
-            System.out.println(y + " " + getY());
+            //System.out.println(y + " " + getY());
         }
     }
     public boolean isBlocked(){
