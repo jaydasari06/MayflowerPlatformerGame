@@ -121,7 +121,7 @@ public class MyWorld extends World {
         addObject(health, 700, 500);
         addObject(shield, 600 , 500);
         addRandomObjects();
-        showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.BLACK);
+        showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.WHITE);
     }
 
     public void addRandomObjects() {
