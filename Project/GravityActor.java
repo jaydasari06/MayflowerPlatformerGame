@@ -25,8 +25,9 @@ public class GravityActor extends Actor
                 isJumping = false;
                 if(isFalling()){
                     setLocation(getX(),getY() - 10);
+                } else {
+                    setLocation(getX(),getY() - 10);
                 }
-                setLocation(getX(),getY() + 10);
                 strength = 0;
             }
             //System.out.println(y + " " + getY());

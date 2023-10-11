@@ -149,7 +149,7 @@ public class MovableAnimatedActor extends AnimatedActor {
                 }
                 this.charJump();
                 if(this.isTouching(Floor.class)){
-                    setLocation(x, y - 0.2); 
+                    setLocation(x, y - 1); 
                 }
                 jumpReady = false; 
             } else {
@@ -160,7 +160,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             }
             jumpReady = false;
             if (this.isTouching(Tiles.class)) {
-                setLocation(x, y+30);
+                setLocation(x, y-30);
             } 
         } else if(Mayflower.isKeyDown(Keyboard.KEY_Z)){
             if(direction == "left"){
