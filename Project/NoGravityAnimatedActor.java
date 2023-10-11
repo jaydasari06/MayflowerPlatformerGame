@@ -8,7 +8,7 @@ public class NoGravityAnimatedActor extends Actor
     public NoGravityAnimatedActor() 
     {
         animation = null;
-        animationTimer = new Timer(100000000);
+        animationTimer = new Timer(200000000);
     }
     
     public void setAnimation(Animation a){
