@@ -145,7 +145,7 @@ public class MyWorld3 extends World {
     public void act()
     {
         if(Mayflower.isKeyDown(Keyboard.KEY_ENTER) && king.isTouchingObelisk()) {
-            World m = new WinScreen();
+            World m = new WinScreen(king.getScore());
             Mayflower.setWorld(m);
         }
     }
