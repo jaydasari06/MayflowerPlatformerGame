@@ -27,7 +27,7 @@ public class King extends MovableAnimatedActor
     public King() 
     {
         score = 0; 
-        lives = 30000000; 
+        lives = 3; 
         isAttacking = false;
         String[] strings = new String[8];
         String[] strings2 = new String[8];
@@ -240,8 +240,8 @@ public class King extends MovableAnimatedActor
             updateText();
             if(lives == 0)
             {
-                World w = getWorld();
-                w.removeObject(this);
+                World w = new LoseScreen();
+                Mayflower.setWorld(w);
             }
         }
     }

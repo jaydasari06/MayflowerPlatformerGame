@@ -20,11 +20,17 @@ public class MovableAnimatedActor extends AnimatedActor {
     private Animation attackRight3; 
     private Animation attackLeft3;
     private Animation climbingRight;
+    private int level;
     private boolean jumpReady; 
 
 
     public MovableAnimatedActor() {
         direction = "right";
+        level = 1;
+    }
+
+    public void nextLevel(int s){
+        level++;
     }
 
     public void setWalkRightAnimation(Animation ani) {
@@ -163,8 +169,19 @@ public class MovableAnimatedActor extends AnimatedActor {
                 setLocation(x, y-30);
             }
         } else if(Mayflower.isKeyDown(Keyboard.KEY_ENTER) && this.isTouching(AnimatedObelisk.class)) {
+            World j = new MyWorld3();
             World m = new MyWorld2();
-            Mayflower.setWorld(m);
+            World ij = new WinScreen();
+
+            if(level == 1){
+                Mayflower.setWorld(m);
+                level ++;
+            } else if(level == 2){
+                Mayflower.setWorld(j);
+                level ++;
+            } else {
+                Mayflower.setWorld(ij);
+            }
         } else if(Mayflower.isKeyDown(Keyboard.KEY_Z)){
             if(direction == "left"){
                 newAction = "attackLeft";
