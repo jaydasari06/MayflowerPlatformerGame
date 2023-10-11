@@ -110,6 +110,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         else if (this.isBlocked() || isFalling) {
             jumpReady = false; 
         }
+        
         if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT)) {
             direction = "right";
             if (x < xmax) {
@@ -121,7 +122,7 @@ public class MovableAnimatedActor extends AnimatedActor {
                 newAction = "fallingRight";
             }
     
-            if (this.isTouching(Floor.class)) {
+            if (this.isTouching(Floor.class) || this.isTouching(Tiles.class)) {
                 setLocation(x - 2, y);
             }
         } else if (Mayflower.isKeyDown(Keyboard.KEY_LEFT)) {
@@ -134,7 +135,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             } else {
                 newAction = "fallingLeft";
             }
-            if (this.isTouching(Floor.class)) {
+            if (this.isTouching(Floor.class) || this.isTouching(Tiles.class)) {
                 setLocation(x + 2, y);
             }
         } else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && jumpReady){
@@ -157,7 +158,10 @@ public class MovableAnimatedActor extends AnimatedActor {
                 setLocation(x, y - 20);
                 
             }
-
+            jumpReady = false;
+            if (this.isTouching(Tiles.class)) {
+                setLocation(x, y+30);
+            } 
         } else if(Mayflower.isKeyDown(Keyboard.KEY_Z)){
             if(direction == "left"){
                 newAction = "attackLeft";
@@ -165,7 +169,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             else{
                 newAction = "attackRight";
             }
-        } /*else if(Mayflower.isKeyDown(Keyboard.KEY_X)){
+        } else if(Mayflower.isKeyDown(Keyboard.KEY_A)){
             if(direction == "left"){
                 newAction = "attackLeft2";
             }
@@ -179,7 +183,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             else{
                 newAction = "attackRight3";
             }
-        }*/ else if (isFalling && direction.equals("left")) {
+        } else if (isFalling && direction.equals("left")) {
             newAction = "fallingLeft";
         } /*else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)) {
             if (y < ymax) {

@@ -188,6 +188,8 @@ public class King extends MovableAnimatedActor
             super.setAttackingBool(false);
         }
         setPosition();
+        pickUpHealth();
+        pickUpShield();
     }
 
     public void increaseScore( int amount )
@@ -204,6 +206,11 @@ public class King extends MovableAnimatedActor
     public int getLives()
     {
         return lives; 
+    }
+
+    public void addLives(){
+        lives+=1; 
+        updateText();
     }
 
     private void updateText()
@@ -237,6 +244,19 @@ public class King extends MovableAnimatedActor
                 w.removeObject(this);
             }
         }
+    }
+
+    public void pickUpHealth(){
+        if(this.isTouching(Health.class)){
+            addLives();
+        }
+    }
+
+    public void pickUpShield(){
+        if(this.isTouching(Shield.class)){
+            increaseScore(1);
+        }
+        
     }
 
 

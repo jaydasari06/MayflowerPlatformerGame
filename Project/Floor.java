@@ -4,7 +4,10 @@ import mayflower.*;
 public class Floor extends Actor
 {
     public Floor(){
-        setImage("img/Black_Tile.png");
+        MayflowerImage img = new MayflowerImage("img/Black_Tile.png");
+        img.scale(50,50);
+
+        setImage(img);
     }
     public void act(){
         
