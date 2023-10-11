@@ -109,7 +109,7 @@ public class MyWorld2 extends World {
         shield = new Shield();
         obelisk.scale(50,50);
         addObject(ladder, 160, 430);
-        addObject(king, 100, 200);
+        addObject(king, 0, 450);
         addObject(enemy, 704, 468);
         addObject(enemy2, 250, 150);
         addObject(enemy3, 450, 225);
@@ -118,7 +118,7 @@ public class MyWorld2 extends World {
         addObject(health, 700, 500);
         addObject(shield, 600 , 500);
         addRandomObjects();
-        showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.BLACK);
+        showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.WHITE);
     }
 
     public void addRandomObjects() {

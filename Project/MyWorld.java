@@ -85,6 +85,10 @@ public class MyWorld extends World {
         tiles[7][29] = "platform";
         tiles[7][30] = "platform";
         tiles[7][31] = "platform";
+
+        tiles[13][17] = "spike";
+        tiles[13][18] = "spike";
+        tiles[13][19] = "spike";
         
 
 
@@ -92,6 +96,14 @@ public class MyWorld extends World {
             for(int j = 0; j < tiles[i].length; j ++){
                 if(tiles[i][j].equals("platform")){
                     addObject(new Tiles(), j * 25, i * 25);
+                }
+            }
+        }
+
+        for(int i = 0; i < tiles.length; i++){
+            for(int j = 0; j < tiles[i].length; j ++){
+                if(tiles[i][j].equals("spike")){
+                    addObject(new Spikes(), j * 25, i * 25);
                 }
             }
         }
@@ -112,8 +124,8 @@ public class MyWorld extends World {
         health = new Health();
         shield = new Shield();
         obelisk.scale(50,50);
-        addObject(ladder, 160, 430);
-        addObject(king, 100, 200);
+        addObject(ladder, 160, 430); 
+        addObject(king, 0, 450);
         addObject(enemy, 704, 468);
         addObject(enemy2, 534, 208);
         addObject(enemy3, 304, 468);

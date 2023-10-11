@@ -5,8 +5,8 @@ import mayflower.*;
 public class King extends MovableAnimatedActor
 {
 
-    private int score;
-    private int lives; 
+    private static int score = 0;
+    private static int lives = 3; 
     private boolean isAttacking;
     private Animation walk; 
     private Animation walkLeft;
@@ -26,8 +26,6 @@ public class King extends MovableAnimatedActor
 
     public King() 
     {
-        score = 0; 
-        lives = 3; 
         isAttacking = false;
         String[] strings = new String[8];
         String[] strings2 = new String[8];
@@ -243,13 +241,27 @@ public class King extends MovableAnimatedActor
                     setLocation(0,450);
                 }
             }
-            updateText();
-            if(lives == 0)
+        
+        }
+
+        if(this.isTouching(Spikes.class))
+        {
+            lives--;
+            if(super.getAnimation().equals("fallingRight") || super.getAnimation().equals("fallingLeft"))
+                {
+                    setLocation(0, 449);
+                }
+                else
+                {
+                    setLocation(0,450);
+                }
+        }
+        updateText();
+        if(lives == 0)
             {
                 World w = new LoseScreen();
                 Mayflower.setWorld(w);
             }
-        }
     }
 
     public void pickUpHealth(){
