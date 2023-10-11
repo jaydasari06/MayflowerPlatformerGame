@@ -199,6 +199,14 @@ public class King extends MovableAnimatedActor
         if(isTouching(Enemy.class))
         {
             lives--; 
+            if(super.getAnimation().equals("fallingRight") || super.getAnimation().equals("fallingLeft"))
+            {
+                setLocation(0, 449);
+            }
+            else
+            {
+                setLocation(0,450);
+            }
             updateText();
             if(lives == 0)
             {

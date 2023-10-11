@@ -38,9 +38,9 @@ public class MyWorld extends World {
         obelisk = new Platform();
         obelisk.scale(50,50);
         addObject(king, 200, 0);
-        addObject(enemy, 128, 408);
+        addObject(enemy, 400, 408);
         addObject(obelisk, 700, 0);
-        showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.BLACK);
+        showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.WHITE);
     }
 
     public void act()
