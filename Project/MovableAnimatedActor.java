@@ -155,13 +155,16 @@ public class MovableAnimatedActor extends AnimatedActor {
             } else {
                 newAction = "climbingRight";
                 setLocation(x, y-20);
-                setLocation(x, y - 20);
+                
                 
             }
             jumpReady = false;
             if (this.isTouching(Tiles.class)) {
                 setLocation(x, y-30);
-            } 
+            }
+        } else if(Mayflower.isKeyDown(Keyboard.KEY_ENTER) && this.isTouching(AnimatedObelisk.class)) {
+            World m = new MyWorld2();
+            Mayflower.setWorld(m);
         } else if(Mayflower.isKeyDown(Keyboard.KEY_Z)){
             if(direction == "left"){
                 newAction = "attackLeft";
