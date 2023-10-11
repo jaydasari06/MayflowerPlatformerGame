@@ -7,6 +7,7 @@ public class King extends MovableAnimatedActor
 
     private int score;
     private int lives; 
+    private boolean isAttacking;
     private Animation walk; 
     private Animation walkLeft;
     private Animation idleLeft;
@@ -17,6 +18,7 @@ public class King extends MovableAnimatedActor
     private Animation jumpingLeft; 
     private Animation attackRight; 
     private Animation attackLeft;
+    private Animation climbingRight;
     private Animation attackRight2; 
     private Animation attackLeft2;
     private Animation attackRight3; 
@@ -26,6 +28,7 @@ public class King extends MovableAnimatedActor
     {
         score = 0; 
         lives = 30000000; 
+        isAttacking = false;
         String[] strings = new String[8];
         String[] strings2 = new String[8];
         String[] walkleft = new String[8];
@@ -33,6 +36,7 @@ public class King extends MovableAnimatedActor
         String[] fallingright = new String[2];
         String[] fallingleft = new String[2];
         String[] jumpingright = new String[2];
+        String[] climbingright = new String[2];
         String[] jumpingleft = new String[2];
         String[] attackright = new String[4];
         String[] attackleft = new String[4];
@@ -128,6 +132,15 @@ public class King extends MovableAnimatedActor
         attackLeft.mirrorHorizontally();
         attackLeft.scale(200, 172);
         attackLeft.setBounds(xBox - 65, yBox, width + 65, height);
+
+        for(int i = 0; i < 2; i ++){
+            climbingright[i] = "img/Medival King/Jump/0" + i + "_Jump.png";
+        }
+        climbingRight = new Animation(frame, climbingright);
+        setJumpingRightAnimation(jumpingRight);
+        climbingRight.scale(200, 172);
+        climbingRight.setBounds(xBox, yBox, width, height + 5);
+
         /* 
         for(int i = 0; i < 4; i ++){
             attackright2[i] = "img/Medival King/Attack2/0" + i + "_Attack2.png";
@@ -168,6 +181,12 @@ public class King extends MovableAnimatedActor
     public void act()
     {
         super.act();
+        
+        if(super.getAnimation().equals("attackLeft") || super.getAnimation().equals("attackRight")){
+            super.setAttackingBool(true);
+        } else {
+            super.setAttackingBool(false);
+        }
         setPosition();
     }
 
@@ -198,14 +217,18 @@ public class King extends MovableAnimatedActor
     {
         if(isTouching(Enemy.class))
         {
-            lives--; 
-            if(super.getAnimation().equals("fallingRight") || super.getAnimation().equals("fallingLeft"))
-            {
-                setLocation(0, 449);
-            }
-            else
-            {
-                setLocation(0,450);
+            
+            
+            if(!getAttackingBool()){
+                lives--;
+                if(super.getAnimation().equals("fallingRight") || super.getAnimation().equals("fallingLeft"))
+                {
+                    setLocation(0, 449);
+                }
+                else
+                {
+                    setLocation(0,450);
+                }
             }
             updateText();
             if(lives == 0)

@@ -8,6 +8,7 @@ public class MyWorld extends World {
     private String[][] tiles;
     private Platform obelisk; 
     private Enemy enemy; 
+    private Ladder ladder;
     
     public void buildWorld(){
         for(int i = 0; i < tiles.length; i++){
@@ -35,16 +36,23 @@ public class MyWorld extends World {
         buildWorld();
         king = new King();
         enemy = new Enemy();
+        ladder = new Ladder();
         obelisk = new Platform();
         obelisk.scale(50,50);
+        addObject(ladder, 200, 300);
         addObject(king, 200, 0);
         addObject(enemy, 400, 408);
         addObject(obelisk, 700, 0);
+        
         showText("Score: " + king.getScore() +  " Lives: " + king.getLives(), 10, 30, Color.WHITE);
     }
 
     public void act()
     {
+    }
+
+    public MovableAnimatedActor getKing(){
+        return king;
     }
 
 }

@@ -19,7 +19,9 @@ public class MovableAnimatedActor extends AnimatedActor {
     private Animation attackLeft2;
     private Animation attackRight3; 
     private Animation attackLeft3;
+    private Animation climbingRight;
     private boolean jumpReady; 
+
 
     public MovableAnimatedActor() {
         direction = "right";
@@ -79,6 +81,10 @@ public class MovableAnimatedActor extends AnimatedActor {
         attackRight3 = ani;
     }
 
+    public void setClimbingRightAnimation(Animation ani) {
+        climbingRight = ani;
+    }
+
 
 
     public void act() {
@@ -97,7 +103,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             newAction = "idle";
         }
     
-        if(!this.isBlocked() && !isFalling)
+        if((!this.isBlocked() && !isFalling) || (this.isTouching(Ladder.class)))
         {
             jumpReady = true; 
         }
@@ -132,17 +138,26 @@ public class MovableAnimatedActor extends AnimatedActor {
                 setLocation(x + 2, y);
             }
         } else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && jumpReady){
-            if(direction == "left"){
-                newAction = "jumpingLeft";
+            if(!this.isTouching(Ladder.class)){
+                super.setIsGravity(true);
+                if(direction == "left"){
+                    newAction = "jumpingLeft";
+                }
+                else{
+                    newAction = "jumpingRight";
+                }
+                this.charJump();
+                if(this.isTouching(Floor.class)){
+                    setLocation(x, y - 0.2); 
+                }
+                jumpReady = false; 
+            } else {
+                newAction = "climbingRight";
+                setLocation(x, y-20);
+                setLocation(x, y - 20);
+                
             }
-            else{
-                newAction = "jumpingRight";
-            }
-            this.charJump();
-            if(this.isTouching(Floor.class)){
-                setLocation(x, y - 20); 
-            }
-            jumpReady = false; 
+
         } else if(Mayflower.isKeyDown(Keyboard.KEY_Z)){
             if(direction == "left"){
                 newAction = "attackLeft";
@@ -229,12 +244,23 @@ public class MovableAnimatedActor extends AnimatedActor {
             if(newAction.equals("attackLeft3")){
                     setAnimation(attackLeft3);
             }
+            if(newAction.equals("climbingRight")){
+                    setAnimation(climbingRight);
+            }
             currentAction = newAction;  
         }
     }
 
     public String getAnimation() {
         return currentAction;
+    }
+    
+    public void setAttackingBool(boolean s){
+        super.setIsAttacking(s);
+    }
+
+    public boolean getAttackingBool(){
+        return super.getIsAttacking();
     }
 
     public void setAnimation(Animation a) {
