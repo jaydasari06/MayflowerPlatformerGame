@@ -42,11 +42,11 @@ public class MyWorld2 extends World {
         // tiles[17][26] = "platform";
 
         tiles[17][8] = "platform";
-        tiles[17][9] = "platform";
-        tiles[17][10] = "platform";
-        tiles[17][11] = "platform";
-        tiles[17][12] = "platform";
-        tiles[17][13] = "platform";
+        tiles[18][9] = "platform";
+        tiles[19][10] = "platform";
+        tiles[20][11] = "platform";
+        tiles[21][12] = "platform";
+        tiles[22][13] = "platform";
 
         
         tiles[10][11] = "platform";
@@ -56,12 +56,6 @@ public class MyWorld2 extends World {
         tiles[10][15] = "platform";
         tiles[10][16] = "platform";
 
-        tiles[5][5] = "platform";
-        tiles[5][6] = "platform";
-        tiles[5][7] = "platform";
-        tiles[5][8] = "platform";
-        tiles[5][9] = "platform";
-        tiles[5][10] = "platform";
 
         tiles[10][9] = "platform";
         tiles[10][10] = "platform";
@@ -77,12 +71,12 @@ public class MyWorld2 extends World {
         tiles[13][24] = "platform";
         tiles[13][25] = "platform";
 
+        tiles[7][23] = "platform";
+        tiles[7][24] = "platform";
+        tiles[7][25] = "platform";
         tiles[7][26] = "platform";
         tiles[7][27] = "platform";
         tiles[7][28] = "platform";
-        tiles[7][29] = "platform";
-        tiles[7][30] = "platform";
-        tiles[7][31] = "platform";
         
 
 

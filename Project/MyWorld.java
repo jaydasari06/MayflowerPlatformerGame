@@ -11,6 +11,8 @@ public class MyWorld extends World {
     private String[][] tiles;
     private AnimatedObelisk obelisk; 
     private Enemy enemy; 
+    private Enemy enemy2; 
+    private Enemy enemy3; 
     private Health health; 
     private Shield shield; 
     private Ladder ladder;
@@ -56,12 +58,12 @@ public class MyWorld extends World {
         tiles[10][15] = "platform";
         tiles[10][16] = "platform";
 
-        tiles[5][5] = "platform";
-        tiles[5][6] = "platform";
-        tiles[5][7] = "platform";
-        tiles[5][8] = "platform";
-        tiles[5][9] = "platform";
-        tiles[5][10] = "platform";
+        // tiles[5][5] = "platform";
+        // tiles[5][6] = "platform";
+        // tiles[5][7] = "platform";
+        // tiles[5][8] = "platform";
+        // tiles[5][9] = "platform";
+        // tiles[5][10] = "platform";
 
         tiles[10][9] = "platform";
         tiles[10][10] = "platform";
@@ -103,6 +105,8 @@ public class MyWorld extends World {
         buildWorld();
         king = new King();
         enemy = new Enemy();
+        enemy2 = new Enemy();
+        enemy3 = new Enemy();
         ladder = new Ladder();
         obelisk = new AnimatedObelisk();
         health = new Health();
@@ -111,6 +115,8 @@ public class MyWorld extends World {
         addObject(ladder, 160, 430);
         addObject(king, 100, 200);
         addObject(enemy, 704, 468);
+        addObject(enemy2, 534, 208);
+        addObject(enemy3, 304, 468);
         addObject(obelisk, 700, 0);
         addObject(health, 700, 500);
         addObject(shield, 600 , 500);
