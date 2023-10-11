@@ -5,7 +5,7 @@ import java.util.Collections;
 import mayflower.*;
 
 
-public class MyWorld extends World {
+public class MyWorld2 extends World {
 
     private King king;
     private String[][] tiles;
@@ -95,7 +95,7 @@ public class MyWorld extends World {
         }
     }
 
-    public MyWorld() 
+    public MyWorld2() 
     {
         setBackground("img/TestBackground.png");
         Mayflower.showBounds(true);

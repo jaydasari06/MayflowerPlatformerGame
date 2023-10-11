@@ -13,11 +13,12 @@ public class Ladder extends NoGravityAnimatedActor
         }
         ladder = new Animation(50, fullAnimation);
         setAnimation(ladder);
-        ladder.scale(400, 400);
-        ladder.setBounds(160,80,80,240);
+        ladder.scale(200, 200);
+        ladder.setBounds(80,40,40,120);
         
     }
     public void act(){
         super.act();
     }
+
 }
