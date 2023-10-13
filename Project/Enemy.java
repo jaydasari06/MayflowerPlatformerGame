@@ -5,7 +5,7 @@ import mayflower.World;
 public class Enemy extends AnimatedActor
 {
     private Animation attackingAndIdling; 
-    private static int lives;
+    private int lives;
     private String direction = "right";
     private int ogX;
     private Animation deathAnimation;
@@ -50,6 +50,7 @@ public class Enemy extends AnimatedActor
         setAnimation(attackingAndIdling);
         attackingAndIdling.scale(150, 150);
         attackingAndIdling.setBounds(45, 30, 80, 90);
+
         for(int k = 0; k < 20; k ++){
             deathAnimationList[k] = "img/Enemy/death/" + (k<10 ? "0" + k : k) + "_death.png";
         }
@@ -85,7 +86,6 @@ public class Enemy extends AnimatedActor
             //     World w = getWorld();
             //     w.removeObject(this);
             // }
-            System.out.print("s");
             World w = getWorld();
             w.removeObject(this);
         }

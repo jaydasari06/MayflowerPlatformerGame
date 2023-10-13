@@ -92,24 +92,66 @@ public class MyWorld extends World {
         tiles[0][30] = "obelisk1";
         tiles[0][31] = "obelisk1";
 
-        tiles[18][24] = "enemy";
-        tiles[18][27] = "enemy1";
-        tiles[18][26] = "enemy1";
+        tiles[18][26] = "enemy";
+        tiles[18][24] = "enemy1";
         tiles[18][25] = "enemy1";
-        tiles[18][29] = "enemy1";
+        tiles[18][27] = "enemy1";
+
 
         
         tiles[8][16] = "enemy";
         tiles[8][17] = "enemy1";
         tiles[8][15] = "enemy1";
         tiles[8][18] = "enemy1";
-        tiles[8][19] = "enemy1";
+
+        tiles[9][15] = "enemy1";
+        tiles[9][16] = "enemy1";
+        tiles[9][17] = "enemy1";
+        tiles[9][18] = "enemy1";
+
+        tiles[10][15] = "enemy1";
+        tiles[10][16] = "enemy1";
+        tiles[10][17] = "enemy1";
+        tiles[10][18] = "enemy1";
+
+        tiles[11][15] = "enemy1";
+        tiles[11][16] = "enemy1";
+        tiles[11][17] = "enemy1";
+        tiles[11][18] = "enemy1";
+
+        tiles[12][15] = "enemy1";
+        tiles[12][16] = "enemy1";
+        tiles[12][17] = "enemy1";
+        tiles[12][18] = "enemy1";
+
+        
+
 
         tiles[9][10] = "enemy";
         tiles[9][9] = "enemy1";
         tiles[9][8] = "enemy1";
         tiles[9][11] = "enemy1";
-        tiles[9][12] = "enemy1";
+
+        tiles[10][10] = "enemy1";
+        tiles[10][9] = "enemy1";
+        tiles[10][8] = "enemy1";
+        tiles[10][11] = "enemy1";
+
+        tiles[11][10] = "enemy1";
+        tiles[11][9] = "enemy1";
+        tiles[11][8] = "enemy1";
+        tiles[11][11] = "enemy1";
+
+        tiles[12][10] = "enemy1";
+        tiles[12][9] = "enemy1";
+        tiles[12][8] = "enemy1";
+        tiles[12][11] = "enemy1";
+
+        tiles[13][10] = "enemy1";
+        tiles[13][9] = "enemy1";
+        tiles[13][8] = "enemy1";
+        tiles[13][11] = "enemy1";
+
         
 
 
@@ -157,7 +199,7 @@ public class MyWorld extends World {
     public MyWorld() 
     {
         setBackground("img/TestBackground.png");
-        Mayflower.showBounds(true);
+        Mayflower.showBounds(false);
         tiles = new String[24][32];
         buildWorld();
         king = new King();

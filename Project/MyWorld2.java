@@ -98,20 +98,58 @@ public class MyWorld2 extends World {
         tiles[18][27] = "enemy1";
         tiles[18][26] = "enemy1";
         tiles[18][25] = "enemy1";
-        tiles[18][29] = "enemy1";
+
         
         tiles[12][16] = "enemy";
         tiles[12][17] = "enemy1";
         tiles[12][15] = "enemy1";
         tiles[12][18] = "enemy1";
-        tiles[12][19] = "enemy1";
+
+        tiles[13][16] = "enemy1";
+        tiles[13][17] = "enemy1";
+        tiles[13][15] = "enemy1";
+        tiles[13][18] = "enemy1";
+
+        tiles[14][16] = "enemy1";
+        tiles[14][17] = "enemy1";
+        tiles[14][15] = "enemy1";
+        tiles[14][18] = "enemy1";
+
+        tiles[15][16] = "enemy1";
+        tiles[15][17] = "enemy1";
+        tiles[15][15] = "enemy1";
+        tiles[15][18] = "enemy1";
+
+        tiles[16][16] = "enemy1";
+        tiles[16][17] = "enemy1";
+        tiles[16][15] = "enemy1";
+        tiles[16][18] = "enemy1";
+
 
         tiles[11][10] = "enemy";
         tiles[11][9] = "enemy1";
         tiles[11][8] = "enemy1";
         tiles[11][11] = "enemy1";
-        tiles[11][12] = "enemy1";
+
+        tiles[12][10] = "enemy1";
+        tiles[12][9] = "enemy1";
+        tiles[12][8] = "enemy1";
+        tiles[12][11] = "enemy1";
+
+        tiles[13][10] = "enemy1";
+        tiles[13][9] = "enemy1";
+        tiles[13][8] = "enemy1";
+        tiles[13][11] = "enemy1";
         
+        tiles[14][10] = "enemy1";
+        tiles[14][9] = "enemy1";
+        tiles[14][8] = "enemy1";
+        tiles[14][11] = "enemy1";
+
+        tiles[15][10] = "enemy1";
+        tiles[15][9] = "enemy1";
+        tiles[15][8] = "enemy1";
+        tiles[15][11] = "enemy1";
         
 
 
@@ -159,7 +197,7 @@ public class MyWorld2 extends World {
     public MyWorld2() 
     {
         setBackground("img/TestBackground.png");
-        Mayflower.showBounds(true);
+        Mayflower.showBounds(false);
         tiles = new String[24][32];
         buildWorld();
         king = new King();
