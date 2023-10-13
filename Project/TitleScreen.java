@@ -9,7 +9,7 @@ public class TitleScreen extends World {
     {
         setBackground("img/TitleScreen.jpg");
         Mayflower.showBounds(true);
-        showText("Welcome!", 330, 50, Color.WHITE);
+        showText("Knight Dash!", 330, 50, Color.WHITE);
         showText("Press Enter to Play: ", 260, 100, Color.WHITE);
         
     }

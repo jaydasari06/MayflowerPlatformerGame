@@ -9,7 +9,7 @@ public class LoseScreen extends World {
     {
         setBackground("img/TitleScreen.jpg");
         Mayflower.showBounds(true);
-        showText("You Lose dummy!!!", 330, 50, Color.WHITE);
+        showText("You Lose!!!", 330, 50, Color.WHITE);
         showText("Press space to restart.", 260, 100, Color.WHITE);
         
     }
