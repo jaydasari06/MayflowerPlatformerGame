@@ -63,9 +63,9 @@ public class Enemy extends AnimatedActor
         super.act();
         checkAttacked();
         if(direction.equals("right")){
-            setLocation(getX()+10, getY());
+            setLocation(getX()+5, getY());
         } else {
-            setLocation(getX()-10, getY());
+            setLocation(getX()-5, getY());
         }
 
         if(getX() > ogX + 100 || getX() < ogX - 100){

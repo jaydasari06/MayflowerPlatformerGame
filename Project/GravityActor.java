@@ -20,6 +20,10 @@ public class GravityActor extends Actor
             setLocation(getX(),getY() - 1);
         if(isJumping){
             setLocation(getX(),getY()-(10-strength/5));
+            if(getY() - (10-strength/5) == 0)
+            {
+                setLocation(getX(),getY() + (10 - strength/5));
+            }
             strength++;
             if(isBlocked()){
                 isJumping = false;

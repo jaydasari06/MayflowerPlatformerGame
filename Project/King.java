@@ -129,7 +129,7 @@ public class King extends MovableAnimatedActor
         setAttackLeftAnimation(attackLeft);
         attackLeft.mirrorHorizontally();
         attackLeft.scale(200, 172);
-        attackLeft.setBounds(xBox - 65, yBox, width + 65, height);
+        attackLeft.setBounds(xBox, yBox, width, height);
 
         for(int i = 0; i < 2; i ++){
             climbingright[i] = "img/Medival King/Jump/0" + i + "_Jump.png";
@@ -145,7 +145,7 @@ public class King extends MovableAnimatedActor
         }
         attackRight2 = new Animation(frame, attackright2);
         setAttackRight2Animation(attackRight2);
-        attackRight.scale(200, 172);
+        attackRight.scale(200, 200);
         attackRight.setBounds(xBox, yBox, width + 65, height);
         
         for(int i = 0; i < 4; i ++){
@@ -154,7 +154,7 @@ public class King extends MovableAnimatedActor
         attackLeft2 = new Animation(frame, attackleft2);
         setAttackLeftAnimation(attackLeft2);
         attackLeft.mirrorHorizontally();
-        attackLeft.scale(200, 172);
+        attackLeft.scale(200, 200);
         attackLeft.setBounds(xBox-65, yBox, width + 65, height);
 
         for(int i = 0; i < 4; i ++){
@@ -162,7 +162,7 @@ public class King extends MovableAnimatedActor
         }
         attackRight3 = new Animation(frame, attackright3);
         setAttackRight3Animation(attackRight3);
-        attackRight.scale(200, 172);
+        attackRight.scale(200, 200);
         attackRight.setBounds(xBox, yBox, width + 65, height);
         
         for(int i = 0; i < 4; i ++){
@@ -262,6 +262,10 @@ public class King extends MovableAnimatedActor
                 World w = new LoseScreen();
                 Mayflower.setWorld(w);
             }
+        if(score == 10){
+            World w = new WinScreen(10);
+                Mayflower.setWorld(w);
+        }
     }
 
     public void pickUpHealth(){
